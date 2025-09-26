@@ -1,7 +1,7 @@
 student_name = "Tashauna Ruffin"
-current_gpa = 2.8
+current_gpa = 3.2
 study_hours = 26
-social_points = 10
+social_points = 75
 stress_level = 65 
 
 print(f"Welocme! \nName:{student_name} \nCurrent GPA: {current_gpa} \nStudy hours:{study_hours} \nSocial Points: {social_points} \nStress Level:{stress_level}")
@@ -66,4 +66,30 @@ if study_choice in study_options:
             print("History added knowledge and boosted your social points.")
 elif study_choice not in study_options:
     print("Invalid subject choice. Please pick from the list.")
+
+ending = ""
+if type(current_gpa) is float and type(social_points)is not int:
+    if current_gpa >= 3.5:
+        if stress_level <= 50:
+            ending = "You made Dean's list and stayed semi stress free!"
+        else:
+            ending = "You made Dean's list but was academically burnt out"
+    elif current_gpa >= 2.0:
+        if social_points >= 50:
+            ending = "You passed! and had fun!"
+        else:
+            ending = "You passed! But missed all the fun"
+    else:
+        ending = "Something went wrong and you are on academic probation"
+else:
+    print("Error: GPA is not a float or social points is not a integer")
+
+    
+
+print("\n=== Final Results ===")
+print(f"GPA:{round(current_gpa,2)}")
+print(f"Study Hours: {study_hours}")
+print(f"Social Points: {social_points}")
+print(f"Stress Level: {stress_level}")
+print(f"Your ending: {ending}")
     
